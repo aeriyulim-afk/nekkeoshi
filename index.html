@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101a16">
+  <meta name="description" content="A literary archive by Nekkeoshi and bangsniirene. Fictional worlds, complicated hearts, and stories that stay with you.">
+  <meta name="author" content="Nekkeoshi">
+  <meta name="robots" content="index, follow">
+  <title>Nekkeoshi — A Literary Archive</title>
+
+  <!-- Social sharing preview: Messenger, Facebook, and other Open Graph readers -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Nekkeoshi">
+  <meta property="og:title" content="Nekkeoshi — A Literary Archive">
+  <meta property="og:description" content="Fictional worlds. Real emotions. Explore a literary archive of stories, complicated hearts, and everything in between.">
+  <meta property="og:image" content="https://i.supaimg.com/d85dab1e-2539-44a4-bc11-d5aee02fd51a/766ab0c7-ce74-4650-9cbf-eed9e903bdd2.jpg">
+  <meta property="og:image:alt" content="A cozy, dark library background for the Nekkeoshi literary archive">
+
+  <!-- X / Twitter sharing preview -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nekkeoshi — A Literary Archive">
+  <meta name="twitter:description" content="Fictional worlds. Real emotions. Explore a literary archive of stories, complicated hearts, and everything in between.">
+  <meta name="twitter:image" content="https://i.supaimg.com/d85dab1e-2539-44a4-bc11-d5aee02fd51a/766ab0c7-ce74-4650-9cbf-eed9e903bdd2.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="backdrop" aria-hidden="true"></div>
+  <div class="shade" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="wordmark" href="#home">NEKKEOSHI<span>®</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav id="mainNav">
+      <a href="#home">Home</a><a href="#works">The Archive</a><a href="#about">About</a><a href="#dark-archive" class="dark-link">Dark Archive ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section-wrap" id="home">
+      <p class="eyebrow"><span class="eyebrow-line"></span> A PERSONAL LITERARY ARCHIVE</p>
+      <h1>Fictional worlds.<br><em>Real emotions.</em></h1>
+      <p class="hero-copy">An archive of stories, complicated hearts, and everything in between.</p>
+      <div class="hero-actions"><a class="text-button" href="#works">ENTER THE ARCHIVE <span>↘</span></a><button class="surprise-button" id="surpriseButton" type="button">SURPRISE ME <span>✦</span></button></div>
+      <div class="hero-side-note">Different worlds.<br>One restless imagination.<div class="signature">Nekkeoshi</div></div>
+      <div class="scroll-note">SCROLL TO EXPLORE <span>↓</span></div>
+    </section>
+
+    <section class="featured-section section-wrap" aria-labelledby="featuredTitle">
+      <div class="featured-topline"><p class="eyebrow"><span class="eyebrow-line"></span> A PLACE TO BEGIN</p><span class="featured-note">NO COVERS NEEDED. JUST STORIES.</span></div>
+      <div class="featured-heading"><h2 id="featuredTitle">A few worlds to <em>step into.</em></h2><p>Not sure where to start? Here are a few reader entry points.</p></div>
+      <div class="featured-grid" id="featuredGrid"></div>
+    </section>
+
+    <section class="section-wrap works-section" id="works">
+      <div class="section-heading">
+        <div><p class="eyebrow">THE COLLECTION</p><p class="section-kicker">THE COMPLETE COLLECTION</p><h2>My <em>Works</em></h2><p class="section-intro">Browse the full archive below. Featured stories are only highlights — the complete collection remains here.</p></div>
+        <p class="section-intro">Different AUs. Same heart.<br>Find a story that stays with you.</p>
+      </div>
+      <div class="archive-stats" id="archiveStats" aria-live="polite"></div>
+      <div class="saved-shelf" id="savedShelf" hidden><div><span class="shelf-label">YOUR SAVED SHELF</span><span id="savedCount">0 saved stories</span></div><button type="button" id="toggleSaved">SHOW SAVED STORIES</button></div>
+      <div class="toolbar">
+        <label class="search-wrap"><span>⌕</span><input id="searchInput" type="search" placeholder="Search title, genre, or tag…" aria-label="Search stories"></label>
+        <div class="filters" id="filters">
+          <button class="filter active" data-filter="all">All works</button>
+          <button class="filter" data-filter="BINI / Jhocey">BINI / Jhocey</button>
+          <button class="filter" data-filter="NewJeans / Niniz">NewJeans / Niniz</button>
+          <button class="filter" data-filter="ongoing">Ongoing</button>
+          <button class="filter" data-filter="completed">Completed</button>
+        </div>
+      </div>
+      <div class="work-list" id="workList" aria-live="polite"></div>
+      <p class="empty-state" id="emptyState" hidden>No stories found. Try another search.</p>
+    </section>
+
+    <section class="dark-archive" id="dark-archive">
+      <div class="section-wrap">
+        <p class="eyebrow burgundy-eyebrow"><span class="eyebrow-line"></span> A DIFFERENT SIGNATURE</p>
+        <div class="dark-intro">
+          <div><p class="pen-label">THE DARK ARCHIVE</p><h2>bangsniirene<span class="period">.</span></h2></div>
+          <p class="dark-quote">Some stories leave scars.<br><em>Some truths arrive too late.</em></p>
+        </div>
+        <p class="dark-description">A separate shelf for darker, heavier stories centered on psychological tension, difficult choices, and the things people carry in silence.</p>
+        <div class="work-list dark-work-list" id="darkWorkList"></div>
+      </div>
+    </section>
+
+    <section class="section-wrap about-section" id="about">
+      <p class="eyebrow">A NOTE FROM THE WRITER</p>
+      <div class="about-grid">
+        <div><h2>Behind the<br><em>stories.</em></h2><p class="about-lead">Hi. I'm the person with too many plots and absolutely no intention of keeping them to myself.</p></div>
+        <div class="about-body">
+          <p>I write stories because my mind refuses to shut up. I like complicated people, messy emotions, impossible situations, and the little moments that make fictional worlds feel real.</p>
+          <p>Some stories might emotionally damage you a little. But I do have a soft spot for happy endings. Most of the time.</p>
+          <div class="pen-note"><span>WHY TWO PEN NAMES?</span><p><strong>Nekkeoshi</strong> is home to my general AUs across fandoms and genres. <strong>bangsniirene</strong> is reserved for my darker, heavier psychological stories, including <em>Dissonance</em> and <em>After the Sentence</em>. Different shelves, different moods, same overactive imagination.</p></div>
+          <a class="text-button" href="https://archiveofourown.org/users/Nekkeoshi" target="_blank" rel="noopener">FIND ME ON AO3 <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="wordmark" href="#home">NEKKEOSHI<span>®</span></a><p>WRITE · DREAM · REPEAT</p><a href="#home" aria-label="Back to top">BACK TO TOP ↑</a></footer>
+
+  <dialog id="storyDialog" class="story-dialog">
+    <button class="dialog-close" id="dialogClose" aria-label="Close story details">×</button>
+    <div id="dialogContent"></div>
+  </dialog>
+  <script src="script.js"></script>
+</body>
+</html>
